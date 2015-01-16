@@ -14,6 +14,10 @@ Which of the following is a principle of analytic graphics?
     Make judicious use of color in your scatterplots
     Show box plots (univariate summaries)
 
+```
+Answer: Show comparisons
+```
+
 ### Question 2
 
 What is the role of exploratory graphs in data analysis?
@@ -22,6 +26,10 @@ What is the role of exploratory graphs in data analysis?
     They are made for formal presentations.
     Axes, legends, and other details are clean and exactly detailed.
     They are used in place of formal modeling.
+
+```
+Answer: They are typically made very quickly.
+```
 
 ### Question 3
 
@@ -32,6 +40,10 @@ Which of the following is true about the base plotting system?
     Margins and spacings are adjusted automatically depending on the type of plot and the data
     Plots are typically created with a single function call
 
+```
+Answer: Plots are created and annotated with separate functions
+```
+
 ### Question 4
 
 Which of the following is an example of a valid graphics device in R?
@@ -40,6 +52,10 @@ Which of the following is an example of a valid graphics device in R?
     A PNG file
     A socket connection
     A Microsoft Word document
+
+```
+Answer: A PNG file
+```
 
 ### Question 5
 
@@ -50,6 +66,10 @@ Which of the following is an example of a vector graphics device in R?
     PNG
     GIF
 
+```
+Answer: SVG
+```
+
 ### Question 6
 
 Bitmapped file formats can be most useful for
@@ -58,6 +78,10 @@ Bitmapped file formats can be most useful for
     Plots that require animation or interactivity
     Plots that may need to be resized
     Scatterplots with many many points
+
+```
+Answer:  Plots that are not scaled to a specific resolution
+```
 
 ### Question 7
 
@@ -68,6 +92,10 @@ Which of the following functions is typically used to add elements to a plot in 
     hist()
     boxplot()
 
+```
+Answer: text()
+```
+
 ### Question 8
 
 Which function opens the screen graphics device on Windows?
@@ -76,6 +104,10 @@ Which function opens the screen graphics device on Windows?
     xfig()
     windows()
     jpeg()
+
+```
+Answer: windows()
+```
 
 ### Question 9
 
@@ -86,6 +118,10 @@ What does the 'pch' option to par() control?
     the orientation of the axis labels on the plot
     the plotting symbol/character in the base graphics system
 
+```
+Answer: the plotting symbol/character in the base graphics system
+```
+
 ### Question 10
 
 If I want to save a plot to a PDF file, which of the following is a correct way of doing that?
@@ -94,3 +130,8 @@ If I want to save a plot to a PDF file, which of the following is a correct way 
     Construct the plot on the screen device and then copy it to a PDF file with dev.copy2pdf()
     Open the PostScript device with postscript(), construct the plot, then close the device with dev.off().
     Open the screen device with quartz(), construct the plot, and then close the device with dev.off().
+
+```
+Answer: Construct the plot on the screen device and then copy it to a PDF file with dev.copy2pdf()
+
+```

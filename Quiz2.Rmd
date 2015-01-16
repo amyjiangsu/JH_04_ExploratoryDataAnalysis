@@ -12,6 +12,10 @@ Under the lattice graphics system, what do the primary plotting functions like x
     an object of class "lattice"
     an object of class "plot"
     nothing; only a plot is made
+    
+```
+Answer: an object of class "trellis"
+```
 
 ### Question 2
 
@@ -26,6 +30,12 @@ xyplot(weight ~ Time | Diet, BodyWeight)
     A set of 11 panels showing the relationship between weight and diet for each time.
     A set of 3 panels showing the relationship between weight and time for each rat.
 
+```{r}
+library(nlme)
+library(lattice)
+xyplot(weight ~ Time | Diet, BodyWeight)
+```
+
 ### Question 3
 
 Annotation of plots in any plotting system involves adding points, lines, or text to the plot, in addition to customizing axis labels or adding titles. Different plotting systems have different sets of functions for annotating plots in this way. Which of the following functions can be used to annotate the panels in a multi-panel lattice plot?
@@ -34,6 +44,10 @@ Annotation of plots in any plotting system involves adding points, lines, or tex
     axis()
     panel.abline()
     lines()
+
+```
+Answer: panel.abline()
+```
 
 ### Question 4
 
@@ -51,6 +65,10 @@ Which of the following is an explanation for why no plot appears?
     The object 'p' has not yet been printed with the appropriate print method.
     There is a syntax error in the call to xyplot().
 
+```
+Answer: The object 'p' has not yet been printed with the appropriate print method.
+```
+
 ### Question 5
 
 In the lattice system, which of the following functions can be used to finely control the appearance of all lattice plots?
@@ -60,6 +78,11 @@ In the lattice system, which of the following functions can be used to finely co
     print.trellis()
     trellis.par.set()
 
+```
+Answer: trellis.par.set()
+```
+
+
 ### Question 6
 
 What is ggplot2 an implementation of?
@@ -68,6 +91,10 @@ What is ggplot2 an implementation of?
     the base plotting system in R
     a 3D visualization system
     the S language originally developed by Bell Labs
+
+```
+Answer: the Grammar of Graphics developed by Leland Wilkinson
+```
 
 ### Question 7
 
@@ -87,6 +114,15 @@ I am interested in examining how the relationship between ozone and wind speed v
     
     qplot(Wind, Ozone, data = airquality, facets = . ~ factor(Month))
 
+```{r}
+library("ggplot2")
+library(datasets)
+data(airquality)
+
+airquality = transform(airquality, Month = factor(Month))
+qplot(Wind, Ozone, data = airquality, facets = . ~ Month)
+```
+
 ### Question 8
 
 What is a geom in the ggplot2 system?
@@ -95,6 +131,10 @@ What is a geom in the ggplot2 system?
     a method for mapping data to attributes like color and size
     a statistical transformation
     a method for making conditioning plots
+    
+```
+Answer: a plotting object like point, line, or other shape
+```
 
 ### Question 9
 
@@ -111,6 +151,10 @@ I was expecting a scatterplot of 'votes' and 'rating' to appear. What's the prob
     ggplot does not yet know what type of layer to add to the plot.
     There is a syntax error in the call to ggplot.
 
+```
+Answer: ggplot does not yet know what type of layer to add to the plot.
+```
+
 ### Question 10
 
 The following code creates a scatterplot of 'votes' and 'rating' from the movies dataset in the ggplot2 package. After loading the ggplot2 package with the library() function, I can run
@@ -123,3 +167,11 @@ How can I modify the the code above to add a smoother to the scatterplot?
     qplot(votes, rating, data = movies, panel = panel.loess)
     qplot(votes, rating, data = movies, smooth = "loess")
     qplot(votes, rating, data = movies) + stats_smooth("loess")
+
+```{r}
+library(ggplot2)
+qplot(votes, rating, data = movies) + geom_smooth() + theme(
+            panel.background = element_rect(fill="white"),
+            panel.grid.major = element_line(colour = "grey")
+    )   
+```
